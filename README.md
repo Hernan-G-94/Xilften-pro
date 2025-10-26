@@ -34,23 +34,6 @@ Construir la estructura base de una aplicación en React, aplicando los fundamen
 ✅ **Uso de `children`** en el componente `Container`  
 ✅ **Deploy automático** desde GitHub a Vercel
 
-## 🗂️ Estructura del proyecto
-
-src/
-├── components/
-│ ├── Container.jsx
-│ ├── Container.module.css
-│ ├── MovieCard.jsx
-│ ├── MovieCard.module.css
-│ ├── Navbar.jsx
-│ ├── Navbar.module.css
-│ ├── SearchBar.jsx
-│ └── SearchBar.module.css
-├── data/
-│ └── movies.js
-├── App.css
-├── App.jsx
-└── main.jsx
 
 ## ⚙️ Instalación y ejecución local
 
