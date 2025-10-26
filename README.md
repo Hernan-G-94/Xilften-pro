@@ -38,19 +38,20 @@ Construir la estructura base de una aplicación en React, aplicando los fundamen
 ## ⚙️ Instalación y ejecución local
 
 1. Clonar el repositorio:
+   
     git clone https://github.com/tu-usuario/peliculas-app.git
 
-2. Instalar dependencias:
+3. Instalar dependencias:
 
     npm install
 
 
-3. Ejecutar el proyecto:
+4. Ejecutar el proyecto:
 
     npm run dev
 
 
-4. Abrir en el navegador:
+5. Abrir en el navegador:
 
     http://localhost:5173
 
