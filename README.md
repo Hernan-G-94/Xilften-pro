@@ -63,11 +63,12 @@ Construir la estructura base de una aplicación en React, aplicando los fundamen
 
 -- CSS Modules
 
--- JavaScript (ES6+)
+-- JavaScript
 
 -- Vercel
 
 👨‍💻 Autor
 
 Hernán Di Gialonardo
+
 Proyecto académico — Informatorio 2025
