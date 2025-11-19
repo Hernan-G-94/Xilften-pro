@@ -3,6 +3,7 @@ import styles from "./MovieCard.module.css";
 export default function MovieCard({ movie, onSelect, isFavorite, onToggleFavorite }) {
     return (
         <div className={styles.card}>
+
             {/* Bloque principal: al hacer click muestra los detalles */}
             <div onClick={() => onSelect(movie)} style={{ cursor: "pointer" }}>
                 <img src={movie.image} alt={movie.title} />
@@ -12,6 +13,7 @@ export default function MovieCard({ movie, onSelect, isFavorite, onToggleFavorit
 
             {/* Controles: botones de favorito y ver */}
             <div style={{ padding: "0.5rem", display: "flex", justifyContent: "center", gap: "0.5rem" }}>
+                
                 {/* Botón para agregar o quitar de favoritos */}
                 <button
                     onClick={() => onToggleFavorite(movie)}
