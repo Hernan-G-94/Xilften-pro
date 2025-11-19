@@ -28,15 +28,15 @@ Forma parte del trabajo 2 del módulo, reemplazando completamente los datos loca
 
 Incorporar interacción dinámica en la aplicación, cumpliendo con los requisitos del módulo:
 
-✅Eliminar datos hardcodeados
-✅Consumir datos desde un servicio externo (TMDB)
-✅Usar useState y custom hooks
-✅Implementar useQuery y useMutation
-✅Manejar estados de UI: loading, error, empty
-✅Mostrar lista de películas obtenidas desde la API
-✅Permitir agregar favoritos
-✅Persistencia de favoritos con localStorage
-✅Estructura limpia y escalable
+✅Eliminar datos hardcodeados.
+✅Consumir datos desde un servicio externo (TMDB).
+✅Usar useState y custom hooks.
+✅Implementar useQuery y useMutation.
+✅Manejar estados de UI: loading, error, empty.
+✅Mostrar lista de películas obtenidas desde la API.
+✅Permitir agregar favoritos.
+✅Persistencia de favoritos con localStorage.
+✅Estructura limpia y escalable.
 
 ---
 
