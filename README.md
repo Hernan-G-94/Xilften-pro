@@ -1,9 +1,9 @@
 # 🎬 Xilften Pro (React + React Query + TMDB)
 
-Proyecto desarrollado con **React + Vite**, como parte de la práctica de fundamentos de React.  
-La aplicación muestra una lista de películas con sus datos principales, permite buscar por nombre o género y visualizar un detalle en un modal.
-Aplicación web desarrollada que consume datos reales de películas desde la API de TMDB, utilizando React Query, custom hooks y manejo completo de estados de UI.
-Forma parte del trabajo 2 del módulo, reemplazando completamente los datos locales por un servicio externo.
+Proyecto desarrollado con React + Vite, como parte de la práctica de fundamentos de React.
+La aplicación muestra una lista de películas consumidas desde la API de TMDB, permite buscarlas, agregarlas a favoritos, ver su detalle en un modal y navegar mediante un sistema completo de rutas protegidas.
+
+Incluye manejo de estado global con Context, React Query para datos externos, persistencia con LocalStorage y UI modular con CSS Modules.
 
 ---
 
@@ -13,87 +13,151 @@ Forma parte del trabajo 2 del módulo, reemplazando completamente los datos loca
 
 ---
 
-## 🚀 Tecnologías utilizadas
-- React (Vite)
-- React Query (useQuery + useMutation)
-- Custom Hooks (useMovies)
+## 🛠️ Tecnologías utilizadas
+
+- React + Vite
+
+- React Router DOM (rutas protegidas)
+
+- React Query (fetch + caché + mutaciones)
+
 - TMDB API (The Movie Database)
-- LocalStorage (favoritos)
-- JavaScript moderno (ESModules)
+
+- Context + LocalStorage (auth & favoritos)
+
 - CSS Modules
+
+- Axios
+
+- JavaScript moderno (ESM)
 
 ---
 
 ## 🎯 Objetivo del proyecto
 
-Incorporar interacción dinámica en la aplicación, cumpliendo con los requisitos del módulo:
+Implementar una aplicación completa que incluya:
 
-✅ Eliminar datos hardcodeados.
+✔️ Consumo real de API externa (TMDB)
+✔️ Eliminación de datos hardcodeados
+✔️ Navegación con rutas y rutas protegidas
+✔️ Login simulado con Context
+✔️ Dashboard privado
+✔️ Lista de películas
+✔️ Agregar y quitar favoritos
+✔️ Persistencia de favoritos
+✔️ Modal de detalle
+✔️ Buscador
+✔️ UI adaptada y modular
 
-✅ Consumir datos desde un servicio externo (TMDB).
+---
 
-✅ Usar useState y custom hooks.
+🔐 Sistema de autenticación (simple)
 
-✅ Implementar useQuery y useMutation.
+- La app incluye un AuthContext que simula login mediante email:
 
-✅ Manejar estados de UI: loading, error, empty.
+- Si no estás logueado, cualquier ruta te manda a /login
 
-✅ Mostrar lista de películas obtenidas desde la API.
+- Después de iniciar sesión, te redirige automáticamente a /movies
 
-✅ Permitir agregar favoritos.
+- Podés cerrar sesión desde el Dashboard o el Navbar
 
-✅ Persistencia de favoritos con localStorage.
+---
 
-✅ Estructura limpia y escalable.
+⭐ Sistema de Favoritos + Contador en Navbar
+
+Funcionalidades:
+
+- Agregar/quitar películas de favoritos
+
+- Persistencia con LocalStorage
+
+- Reactividad instantánea gracias a React Query
+
+- Un badge con contador aparece en la esquina superior derecha del Navbar
+
+- Página dedicada: /favorites
 
 ---
 
 ## 📡 Consumo de API externa
 
-La app consulta la API de TMDB para obtener películas populares:
+La app obtiene películas desde TMDB:
+
 https://api.themoviedb.org/3/movie/popular?api_key=YOUR_API_KEY
 
----
+React Query gestiona automáticamente:
 
-## 🧠 Lógica principal
+- caché
 
-✔️ Lecturas con React Query (useQuery)
+- loading
 
-Permite:
+- error
 
-obtener películas desde TMDB
-manejar automáticamente loading/error
-cachear resultados
-evitar llamadas repetidas
+- revalidación
 
-✔️ Mutaciones (useMutation)
-
-Utilizadas para:
-
-agregar favoritos
-eliminar favoritos
-sincronizar con localStorage
+- sincronía con mutaciones
 
 ---
 
-## 🖥️ Funcionalidades
-
+🖥️ Funcionalidades detalladas
 🔍 1. Lista de películas
 
-Datos obtenidos en vivo desde TMDB.
-Muestra estado de carga y error según la solicitud.
-Si la API devuelve cero resultados, aparece un empty state.
+- Datos recientes desde TMDB
 
-⭐ 2. Sistema de favoritos
+- Estados de carga y error
 
-Guardado local con localStorage.
-UI reactiva gracias a useMutation.
-Los favoritos persisten aunque reinicies el navegador.
+- Buscador por nombre
 
-🎨 3. Interfaz limpia y modular
+- Modal con información adicional
 
-Componentes separados (Header, MoviesList, MovieCard, etc.).
-Estilos con CSS Modules.
+⭐ 2. Favoritos
+
+- Guardado local con LocalStorage
+
+- Contador dinámico en el Navbar
+
+- Página /favorites con todas las películas agregadas
+
+👤 3. Sistema de usuario
+
+- Login simple (con email)
+
+- Rutas protegidas
+
+- Dashboard del usuario en /dashboard
+
+- Cerrar sesión desde Navbar o Dashboard
+
+🎨 4. UI modular
+
+- Componentes organizados
+
+- Estilos con CSS Modules
+
+- Navbar unificado con contador de favoritos
+
+---
+
+## 🧠 Lógica principal con React Query
+✔️ useQuery
+
+- Para obtener películas desde TMDB
+
+- evita llamadas innecesarias
+
+- cachea datos
+
+- maneja loading/error automáticamente
+
+✔️ useMutation
+
+- Para manipular favoritos
+
+- agrega
+
+- elimina
+
+- sincroniza con LocalStorage
 
 ---
 
@@ -101,25 +165,29 @@ Estilos con CSS Modules.
 
 1. Clonar el repositorio:
    
-    git clone https://github.com/tu-usuario/peliculas-app.git
+    git clone https://github.com/Hernan-G-94/Xilften-pro.git
 
 3. Instalar dependencias:
 
     npm install
-    npm install @tanstack/react-query axios
+npm install @tanstack/react-query axios react-router-dom
 
-4. Ejecutar el proyecto:
+4. Agregar tu API Key de TMDB:
+
+   En un archivo .env: VITE_TMDB_API_KEY=TU_API_KEY
+
+6. Ejecutar el proyecto:
 
     npm run dev
 
 
-5. Abrir en el navegador:
+7. Abrir en el navegador:
 
     http://localhost:5173
 
 
 👨‍💻 Autor
 
-Hernán Di Gialonardo
+Hernán Gabriel Di Gialonardo
 
 Proyecto académico — Informatorio 2025
