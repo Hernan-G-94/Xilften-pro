@@ -37,17 +37,27 @@ Incluye manejo de estado global con Context, React Query para datos externos, pe
 
 Implementar una aplicación completa que incluya:
 
-✔️ Consumo real de API externa (TMDB)
-✔️ Eliminación de datos hardcodeados
-✔️ Navegación con rutas y rutas protegidas
-✔️ Login simulado con Context
-✔️ Dashboard privado
-✔️ Lista de películas
-✔️ Agregar y quitar favoritos
-✔️ Persistencia de favoritos
-✔️ Modal de detalle
-✔️ Buscador
-✔️ UI adaptada y modular
+✔️ Consumo real de API externa (TMDB).
+
+✔️ Eliminación de datos hardcodeados.
+
+✔️ Navegación con rutas y rutas protegidas.
+
+✔️ Login simulado con Context.
+
+✔️ Dashboard privado.
+
+✔️ Lista de películas.
+
+✔️ Agregar y quitar favoritos.
+
+✔️ Persistencia de favoritos.
+
+✔️ Modal de detalle.
+
+✔️ Buscador.
+
+✔️ UI adaptada y modular.
 
 ---
 
